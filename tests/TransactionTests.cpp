@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "Transaction.h"
+#include "Transaction.hpp"
 
 TEST(TransactionTest, ExpenseHasNegativeSignedAmount) {
 	const Transaction expense{Transaction::Kind::expense, 350, "food", ""};

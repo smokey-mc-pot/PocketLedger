@@ -1,4 +1,6 @@
-#include "Transaction.h"
+#include "Transaction.hpp"
+#include <string>
+#include <cstdint>
 	
 Transaction::Kind Transaction::kind() const {
 	return m_kind;

@@ -8,6 +8,7 @@ enable_testing()
 
 add_library(pocketledger_core STATIC 
     src/Transaction.cpp
+	src/Ledger.cpp
 )
 
 target_include_directories(pocketledger_core PUBLIC include)
@@ -21,7 +22,11 @@ FetchContent_Declare(googletest
 
 FetchContent_MakeAvailable(googletest)
 
-add_executable(transaction_tests tests/TransactionTests.cpp)
+add_executable(transaction_tests 
+	tests/TransactionTests.cpp
+	tests/LedgerTests.cpp
+)
+
 target_link_libraries(transaction_tests PRIVATE pocketledger_core GTest::gtest_main)
 
 include(GoogleTest)
